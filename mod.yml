@@ -1,0 +1,74 @@
+title: Personal Lua-Script collection
+originalAuthor: Denhonator, cahudson94, deathofall84
+description: .
+assets:
+- name: scripts/2fmGummiSkip.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/2fmGummiSkip.lua
+- name: scripts/All Keyblades.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/All Keyblades.lua
+- name: scripts/All Materials.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/All Materials.lua
+- name: scripts/AllArmorAccessories.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/AllArmorAccessories.lua
+- name: scripts/Auto Cutscene Skip.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Auto Cutscene Skip.lua
+- name: scripts/DonaldGoofyWeapons.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/DonaldGoofyWeapons.lua
+- name: scripts/Drive Costs.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Drive Costs.lua
+- name: scripts/Drive Form Restrction.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Drive Form Restrction.lua
+- name: scripts/EXP Multiplier.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/EXP Multiplier.lua
+- name: scripts/Gauge Speed.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Gauge Speed.lua
+- name: scripts/Instant Puzzle Reward.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Instant Puzzle Reward.lua
+- name: scripts/Munny.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Munny.lua
+- name: scripts/RC drive stick.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/RC drive stick.lua
+- name: scripts/Use Items in Midair.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Use Items in Midair.lua
