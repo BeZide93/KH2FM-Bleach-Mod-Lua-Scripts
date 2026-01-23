@@ -98,9 +98,9 @@ function _OnFrame()
                     end
 
                 -- STICK DOWN -> Limit Form (0x02A1)
-                -- Check Bit 0x08
+                -- Check Address 0x9ACF74 (New), Bit 0x01
                 elseif (stick & 0x20) == 0x20 then
-                    if (unlockedForms & 0x08) == 0x08 then
+                    if (unlockedForms & 0x01) == 0x01 then
                         SetIntRC(RCID, ForceEnable1, ForceEnable2, 0x02A1)
                     else
                         ConsolePrint("Limit Form locked!")
