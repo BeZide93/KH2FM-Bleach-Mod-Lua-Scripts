@@ -22,6 +22,11 @@ assets:
   method: copy
   source:
   - name: scripts/AllArmorAccessories.lua
+- name: scripts/Auto Atlantica.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Auto Atlantica.lua
 - name: scripts/Auto Cutscene Skip.lua
   platform: pc
   method: copy
@@ -62,11 +67,21 @@ assets:
   method: copy
   source:
   - name: scripts/Munny.lua
+- name: scripts/Player Size.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Player Size.lua
 - name: scripts/RC drive stick.lua
   platform: pc
   method: copy
   source:
   - name: scripts/RC drive stick.lua
+- name: scripts/Summon & Drive Form EXP Table.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Summon & Drive Form EXP Table.lua
 - name: scripts/Use Items in Midair.lua
   platform: pc
   method: copy
