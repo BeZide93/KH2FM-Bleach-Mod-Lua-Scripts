@@ -22,11 +22,6 @@ assets:
   method: copy
   source:
   - name: scripts/AllArmorAccessories.lua
-- name: scripts/Auto Atlantica.lua
-  platform: pc
-  method: copy
-  source:
-  - name: scripts/Auto Atlantica.lua
 - name: scripts/Auto Cutscene Skip.lua
   platform: pc
   method: copy
@@ -57,11 +52,6 @@ assets:
   method: copy
   source:
   - name: scripts/Gauge Speed.lua
-- name: scripts/Instant Puzzle Reward.lua
-  platform: pc
-  method: copy
-  source:
-  - name: scripts/Instant Puzzle Reward.lua
 - name: scripts/Munny.lua
   platform: pc
   method: copy
