@@ -77,3 +77,13 @@ assets:
   method: copy
   source:
   - name: scripts/Use Items in Midair.lua
+- name: scripts/Softreset.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Softreset.lua
+- name: scripts/Skip Roxas Tutorial.lua
+  platform: pc
+  method: copy
+  source:
+  - name: scripts/Skip Roxas Tutorial.lua    
