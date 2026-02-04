@@ -35,6 +35,7 @@ function _OnFrame()
         
         -- 2. UNLOCK ADRESS
         local UnlockAddr = 0x9ACF70
+	local UnlockAddr2 = 0x9ACF7A
 
         local b1 = ReadByte(Button1Addr)
         local b2 = ReadByte(Button2Addr)
@@ -42,6 +43,7 @@ function _OnFrame()
         
         local currentForm = ReadByte(FormAddr)
         local unlockedForms = ReadByte(UnlockAddr)
+	local unlockedForms2 = ReadByte(UnlockAddr2)
         
         -- L2 pressed
         if (b1 & 0x01) == 0x01 then
@@ -100,7 +102,7 @@ function _OnFrame()
                 -- STICK DOWN -> Limit Form (0x02A1)
                 -- Check Address 0x9ACF74 (New), Bit 0x01
                 elseif (stick & 0x20) == 0x20 then
-                    if (unlockedForms & 0x01) == 0x01 then
+                    if (unlockedForms2 & 0x08) == 0x08 then
                         SetIntRC(RCID, ForceEnable1, ForceEnable2, 0x02A1)
                     else
                         ConsolePrint("Limit Form locked!")
