@@ -2,11 +2,11 @@ title: Personal Lua-Script collection
 originalAuthor: Denhonator, cahudson94, deathofall84
 description: .
 assets:
-- name: scripts/DummyAbilities.lua
-  platform: pc
-  method: copy
-  source:
-  - name: scripts/DummyAbilities.lua
+#- name: scripts/DummyAbilities.lua
+#  platform: pc
+#  method: copy
+#  source:
+#  - name: scripts/DummyAbilities.lua
 - name: scripts/2fmGummiSkip.lua
   platform: pc
   method: copy
