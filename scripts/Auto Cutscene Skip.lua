@@ -1,6 +1,6 @@
 LUAGUI_NAME = "Auto Cutscene Skip"
-LUAGUI_AUTH = "KSX"
-LUAGUI_DESC = "Auto Cutscene Skip (optimized)"
+LUAGUI_AUTH = "KSX/BeZide"
+LUAGUI_DESC = "Auto Cutscene Skip (optimized + magic guard)"
 
 -- Version checks
 local epiccheck   = 0x585B61
@@ -16,8 +16,7 @@ local WriteByte    = WriteByte
 local ConsolePrint = ConsolePrint
 
 -- State
-local game = 0          -- 0 unknown, 1 epic, 2 steam, 3 steamjp
-local printedReady = false
+local game = 0
 
 -- Addresses (set after resolve)
 local skipAddr = 0
@@ -27,6 +26,10 @@ local miniCutsceneAddr = 0
 
 -- Guard to avoid writing every frame while already skipping
 local didSkipThisCutscene = false
+
+-- Magic values that must NOT be skipped
+local BLOCK_A = 0xEFACCAFE
+local BLOCK_B = 0xCAFEEFAC
 
 local function TryResolveGame()
   if game ~= 0 then return true end
@@ -59,14 +62,29 @@ local function TryResolveGame()
     return false
   end
 
-  printedReady = true
   return true
+end
+
+local function Int32Normalize(v)
+  -- Some environments return signed int; normalize to 0..0xFFFFFFFF
+  if v < 0 then return v + 0x100000000 end
+  return v
+end
+
+local function HasBlockedMagic()
+  -- Check 32-bit magic at either location
+  local a = Int32Normalize(ReadInt(cutsceneAddr))
+  if a == BLOCK_A or a == BLOCK_B then return true end
+
+  local b = Int32Normalize(ReadInt(miniCutsceneAddr))
+  if b == BLOCK_A or b == BLOCK_B then return true end
+
+  return false
 end
 
 function _OnInit()
   if ENGINE_TYPE == "BACKEND" then
     game = 0
-    printedReady = false
     skipAddr = 0
     frameAddr = 0
     cutsceneAddr = 0
@@ -77,6 +95,12 @@ end
 
 function _OnFrame()
   if not TryResolveGame() then return end
+
+  -- If the magic marker is present, do NOT skip.
+  if HasBlockedMagic() then
+    didSkipThisCutscene = false
+    return
+  end
 
   -- Read minimal values once
   local f = ReadInt(frameAddr)
