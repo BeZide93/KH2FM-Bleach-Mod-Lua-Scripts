@@ -49,7 +49,7 @@ local OFFSETS = {
   -- ANKLETS & HIGH-END ARMOR
   88,
   90, 91, 92,
-  94, 95, 96, 97, 98, 99, 100, 101,
+  94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105,
 
   -- FINAL MIX EXTRAS
   276,
@@ -119,3 +119,4 @@ function _OnFrame()
   end
   lastPress = pressed
 end
+
